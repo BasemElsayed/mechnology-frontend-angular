@@ -25,7 +25,10 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "src/funcs.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -74,7 +77,10 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "src/funcs.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"

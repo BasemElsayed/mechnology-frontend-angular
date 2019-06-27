@@ -1,0 +1,50 @@
+<app-admin-navbar></app-admin-navbar>
+
+
+<!-- Start Header -->
+<header class="contactHeader">
+  <div class="container">
+      <div class="wow fadeIn">
+          <h2 class="h1">Management Partners</h2>
+      </div>
+      
+  </div>
+</header>
+<!-- End Header -->
+
+<div class="alert alert-success" *ngIf="success" role="alert">
+  Service is Successfully added
+</div>
+
+<div class="alert alert-danger" *ngIf="failed" role="alert">
+  Something wrong!
+</div>
+
+
+<div class="services">
+    
+  <div class="container">
+    <div class="row" *ngIf="teams">
+      
+      <div class="col-md-3 col-sm-6" *ngFor='let team of teams'>
+
+        <div class="content" data-toggle="modal" data-target="#exampleModalCenter" style="background-color: #616161 !important">
+          <h4>{{ team.name }}</h4>
+          <img src="http://127.0.0.1:8000/teamImages/{{team.imageURL}}" alt="{{ team.name }}">
+          <button class="btn btn-danger" (click)="delete(team.id)">Delete</button>
+        </div>
+        
+
+      </div>
+    </div>
+
+    <button class="btn btn-primary" routerLink="/addTeam">Add New Partner</button>
+  </div>
+
+  <!-- Start Loading -->
+<div class="loading" *ngIf="!teams">
+  <div class="spinner"></div>
+</div>
+<!-- End Loading -->
+</div>
+

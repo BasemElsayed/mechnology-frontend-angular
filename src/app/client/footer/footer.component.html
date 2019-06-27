@@ -1,0 +1,46 @@
+<footer [ngClass]="{'direction': arabic}">
+    <div class="container">
+        <div class="social-Icons text-center">
+            <h3 *ngIf="english">Find Us In</h3>
+            <h3 *ngIf="arabic">تابعنا علي</h3>
+            <div class="socialMedia">
+                <ul class="social list-unstyled">
+                  <li><a href="https://www.facebook.com/MSPCU/" target="_blank"><span><i class="fab fa-facebook-f"></i></span></a></li>
+                  <li><a href="https://twitter.com/MSPCU?s=08" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="https://www.instagram.com/mspcu/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                  <li><a href="https://www.youtube.com/user/MSTCCU" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="site-map">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <img class="brand" src="src/assets/images/mech.png" alt="logo">
+                </div>
+                <div class="col-md-6 map text-center">
+                    <ul class="list-unstyled">
+                        <li *ngIf="english"><a routerLink="/home">Home</a><span>|</span></li>
+                        <li *ngIf="english"><a routerLink="/about">About</a><span>|</span></li>
+                        <li *ngIf="english"><a routerLink="/portfolio">Portfolio</a><span>|</span></li>
+                        <li *ngIf="english"><a routerLink="/offers">Offers</a><span>|</span></li>
+                        <li *ngIf="english"><a routerLink="/contact">Contact</a></li>
+
+                        <li *ngIf="arabic"><a routerLink="/home">الرئيسيه</a><span>|</span></li>
+                        <li *ngIf="arabic"><a routerLink="/about">من نحن</a><span>|</span></li>
+                        <li *ngIf="arabic"><a routerLink="/portfolio">الاعمال السابقه</a><span>|</span></li>
+                        <li *ngIf="arabic"><a routerLink="/offers">العروض</a><span>|</span></li>
+                        <li *ngIf="arabic"><a routerLink="/contact">اتصل بنا</a></li>
+                    </ul>
+                    <p *ngIf="english">Copyright © 2018 Mechanology. All rights reserved</p>
+                    <p *ngIf="arabic">جميع الحقوق محفوظة وحقوق النشر © ميكانولوجي لعام 2018</p>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-2 ace">
+                    <h5><span *ngIf="english">Powered By</span><span *ngIf="arabic">تصميم وبرمجه </span> <a href="https://www.facebook.com/ACETeam1/?ref=br_rs" target="_blank" style="margin-left: 5px;">ACE</a></h5>
+                </div>
+            </div>
+        </div>        
+    </div>
+</footer>

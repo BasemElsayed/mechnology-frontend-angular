@@ -1,0 +1,171 @@
+<app-navbar></app-navbar>
+
+
+<!-- Start Header -->
+<header class="contactHeader" [ngClass]="{'direction': arabic}">
+  <div class="container">
+      <div class="wow fadeIn">
+          <h2 *ngIf="english">About US</h2>
+          <h2 *ngIf="arabic">عن الشركة</h2>
+      </div>
+      
+  </div>
+</header>
+<!-- End Header -->
+
+
+<!-- Start Mission -->
+<section class="missionAndVission" [ngClass]="{'direction': arabic}">
+  <div class="container wow fadeInUp" data-wow-offset="250">
+      <div class="misson">
+          <h2 class="h1" *ngIf="english">Vission</h2>
+          <h2 class="h1" *ngIf="arabic">رؤيتنا</h2>
+          <p *ngIf="english">{{ vision }}</p>
+          <p *ngIf="arabic">{{ visionArabic }}</p>
+      </div>
+      
+      <div class="row">
+          <div class="col-md-1"></div>
+          <div class="misson vission col-md-10">
+              <h2 class="h1" *ngIf="english">Mission</h2>
+              <h2 class="h1" *ngIf="arabic">مهمتنا</h2>
+              <p class="text-center">
+                  <span *ngFor='let mission of missions'>
+                    <span class="h4" *ngIf="english">{{ mission.missionH }}</span>
+                    <span *ngIf="english">{{ mission.missionP }}</span>
+
+                    <span class="h4" *ngIf="arabic">{{ mission.missionHArabic }}</span>
+                    <span *ngIf="arabic">{{ mission.missionPArabic }}</span>
+
+                    <br> <br>
+                  </span> 
+              </p>
+          </div>
+      </div>
+      
+  </div>
+</section>
+<!-- End Mission -->
+
+
+<!-- Start Count Up Events -->
+<section class="events" [ngClass]="{'direction': arabic}">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-4 cont">
+              <span>
+                  <i class="fas fa-american-sign-language-interpreting"></i>
+              </span>
+              <div class="count">
+                  <span class="timer">{{ job }}</span>
+                  <h3 *ngIf="english">Successfull Job</h3>
+                  <h3 *ngIf="arabic">عمل ناجح</h3>
+              </div>
+          </div>
+          
+          <div class="col-md-4 cont">
+              <span>
+                  <i class="fas fa-map-marker-alt"></i>
+              </span>
+              <div class="count">
+                  <span class="timer">{{ worker }}</span>
+                  <h3 *ngIf="english">Worker</h3>
+                  <h3 *ngIf="arabic">عامل</h3>
+              </div>
+          </div>
+          
+          <div class="col-md-4 cont">
+              <span>
+                  <i class="fas fa-users"></i>
+              </span>
+              <div class="count">
+                  <span class="timer">{{ client }}</span>
+                  <h3 *ngIf="english">Satisfied Client</h3>
+                  <h3 *ngIf="arabic">عميل راضي عن خدمتنا</h3>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- End Count Up Events -->
+
+
+<!-- Start Staff -->
+<section class="staff" [ngClass]="{'direction': arabic}">
+  <div class="container">
+  <h1 *ngIf="english">About Us</h1>
+  <h1 *ngIf="arabic">عن الشركة</h1>
+<br>
+<p>
+  <span *ngIf="english">
+    {{aboutUs}}
+  </span>
+
+  <span *ngIf="arabic">
+    {{aboutUsArabic}}
+  </span>
+
+</p>
+<!--
+  <div class="container wow fadeInUp" data-wow-offset="250">
+      <h2 class="h1">Leadership</h2>
+      <div class="row">
+          <div class="col-md-4">
+              <div class="member">
+                  <img src="images/what-people-say03.jpg">
+                  <h6>CO-FOUNDER &amp; CEO</h6>
+                  <p>Eli drives Apptopia’s strategic vision and manages investor relations. Before Apptopia Eli was involved in several startups, including: GPush, Oasys Water, GreatPoint Energy, and DVTel.</p>
+              </div>
+          </div>
+          
+          <div class="col-md-4">
+              <div class="member admin">
+                  <img src="images/what-people-say01.jpg">
+                  <h6>CO-FOUNDER &amp; CEO</h6>
+                  <p>Eli drives Apptopia’s strategic vision and manages investor relations. Before Apptopia Eli was involved in several startups, including: GPush, Oasys Water, GreatPoint Energy, and DVTel.</p>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="member">
+                  <img src="images/what-people-say02.jpg">
+                  <h6>CO-FOUNDER &amp; CEO</h6>
+                  <p>Eli drives Apptopia’s strategic vision and manages investor relations. Before Apptopia Eli was involved in several startups, including: GPush, Oasys Water, GreatPoint Energy, and DVTel.</p>
+              </div>
+          </div>
+          
+      </div>
+      
+      <div class="row">
+          <div class="col-md-4">
+              <div class="member">
+                  <img src="images/what-people-say04.jpg">
+                  <h6>CO-FOUNDER &amp; CEO</h6>
+                  <p>Eli drives Apptopia’s strategic vision and manages investor relations. Before Apptopia Eli was involved in several startups, including: GPush, Oasys Water, GreatPoint Energy, and DVTel.</p>
+              </div>
+          </div>
+          
+          <div class="col-md-4">
+              <div class="member">
+                  <img src="images/developer.jpg">
+                  <h6>CO-FOUNDER &amp; CEO</h6>
+                  <p>Eli drives Apptopia’s strategic vision and manages investor relations. Before Apptopia Eli was involved in several startups, including: GPush, Oasys Water, GreatPoint Energy, and DVTel.</p>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="member">
+                  <img src="images/graphic%20design.jpg">
+                  <h6>CO-FOUNDER &amp; CEO</h6>
+                  <p>Eli drives Apptopia’s strategic vision and manages investor relations. Before Apptopia Eli was involved in several startups, including: GPush, Oasys Water, GreatPoint Energy, and DVTel.</p>
+              </div>
+          </div>
+          
+      </div>
+      
+      
+  </div>
+-->     </div>
+</section>
+<!-- End Staff -->
+
+
+<app-footer></app-footer>

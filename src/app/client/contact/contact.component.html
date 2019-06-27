@@ -1,0 +1,196 @@
+<app-navbar></app-navbar>
+
+<!-- Start Header -->
+<header class="contactHeader" [ngClass]="{'direction': arabic}">
+    <div class="container">
+        <div class="wow fadeIn">
+            <h2 class="h1" *ngIf="english">Contact US</h2>
+            <h2 class="h1" *ngIf="arabic">اتصل بنا</h2>
+        </div>
+        
+    </div>
+</header>
+<!-- End Header -->
+
+
+<!-- Start Contacts -->
+<section class="contacts" [ngClass]="{'direction': arabic}">
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-3 content wow fadeInLeft" data-wow-offset = "">
+            <div class="location">
+                <h4 *ngIf="english">Our Location</h4>
+                <h4 *ngIf="arabic">العنوان</h4>
+                <p>
+                    <span *ngIf="english">{{ addressEnglish }}</span>
+                    <span *ngIf="arabic">{{ addressArabic }}</span>
+                </p>
+            </div>
+            
+            <div class="contact-information">
+                <h4 *ngIf="english">Contact Information</h4>
+                <h4 *ngIf="arabic">معلومات الاتصال</h4>
+                <p *ngIf="english">
+                    <span>Email: &emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span>
+                    <span>{{ emailCont }}</span><br>
+                    
+                    <span>Primary Phone: &nbsp;&nbsp;</span>
+                    
+                    <span>{{ phone }}</span><br>
+                    
+                    <span>Alternate Phone: </span> 
+                    <span>{{ mobile }}</span><br>
+                </p>
+                <p *ngIf="arabic">
+
+
+                    <span>ايميل: &emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span>
+                    <span>{{ emailCont }}</span><br>
+                    
+                    <span>تليفون: &nbsp;&nbsp;</span>
+                    
+                    <span>{{ phone }}</span><br>
+                    
+                    <span>موبيل: </span> 
+                    <span>{{ mobile }}</span><br>
+                </p>
+            </div>
+            
+            <div class="office-hours">
+                <h4 *ngIf="english">Office Hours</h4>
+                <h4 *ngIf="arabic">ساعات العمل</h4>
+                <p *ngIf="english">
+                    <span>{{ from }} am - {{ to }} pm</span> <br>
+                    
+                    <span>{{ holidaysEnglish }}</span> <br>
+                    <span>&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;Closed</span>
+                </p>
+                <p *ngIf="arabic">
+                    <span>{{ from }} صباحا - {{ to }} مسائا</span> <br>
+                    
+                    <span>{{ holidaysArabic }}</span> <br>
+                    &emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
+                    <span>مغلق</span>
+                </p>
+            </div>
+        </div>
+        <div class="col-lg-7 google-map">
+                <agm-map [latitude]="lat" [longitude]="lng" [zoom]="16">
+                        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                      </agm-map>
+        </div>
+    </div>
+</section>
+<!-- End Contacts -->
+
+<div class="clearfix"></div>
+
+<!-- Start Forms -->
+<section class="forms" [ngClass]="{'direction': arabic}">
+    <div class="container">
+        <h2 class="text-center" *ngIf="english">Contact With Us</h2>
+        <h2 class="text-center" *ngIf="arabic">راسلنا علي</h2>
+        <div class="buttons wow fadeInUp" data-wow-offset = "150">
+            <ul class="list-unstyled">
+                <li *ngIf="english" class="company"><span><i class="fas fa-building"></i></span><i>Corporate</i></li>
+                <li *ngIf="arabic" class="company"><span><i class="fas fa-building"></i></span><i>شركة</i></li>
+
+                <li *ngIf="english" class="customer"><span><i class="fas fa-user"></i></span><i>Customer</i></li>
+                <li *ngIf="arabic" class="customer"><span><i class="fas fa-user"></i></span><i>عميل</i></li>
+            </ul>
+        </div>
+        
+        <div class="customerForm">
+            <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                <div class="row justify-content-center">
+                    <div class="inputs col-md-5">
+                        <span><i class="fas fa-times"></i></span>
+
+                        <div class="form-group">
+                          <input placeholder= "Name" type="text" class="form-control" [(ngModel)]="model.name" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="name" required />
+                          <div class="invalid-feedback">
+                            <div>Name is required</div>
+                          </div>
+                        </div>
+
+
+                        <div class="form-group">
+                          <input placeholder="Phone Number" type="text" class="form-control" [(ngModel)]="model.phone" #password="ngModel" [ngClass]="{'is-invalid':f.submitted && password.invalid}" name="phone" required minlength="11" />
+                          <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+                            <div *ngIf="password.errors.required">Phone Number is required</div>
+                            <div *ngIf="password.errors.minlength">Phone Number must be at least 11 characters</div>
+                          </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                          <input placeholder="Email" type="text" class="form-control" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{'is-invalid':f.submitted && email.invalid}" name="email" required email />
+                          <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                            <div *ngIf="email.errors.required">Email is required</div>
+                            <div *ngIf="email.errors.email">Email must be a valid email Address</div>
+                          </div>
+                        </div>
+
+
+                        <textarea class="form-control" placeholder="Your Message" [(ngModel)]="model.message" #message="ngModel" name="message"></textarea>
+                        <input class="form-control" type="submit" value="Send" name="submit" (click)="customer()">
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        
+        <div class="companyForm">
+            <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                <div class="row justify-content-center">
+                    <div class="inputs col-md-5">
+                        <span><i class="fas fa-times"></i></span>
+
+                        <div class="form-group">
+                          <input placeholder= "Name" type="text" class="form-control" [(ngModel)]="model.name" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="name" required />
+                          <div class="invalid-feedback">
+                            <div>Name is required</div>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input placeholder= "Commerical Register" type="text" class="form-control" [(ngModel)]="model.commericalRegister" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="commericalRegister" required />
+                            <div class="invalid-feedback">
+                                <div>Commerical Register is required</div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                          <input placeholder="Phone Number" type="text" class="form-control" [(ngModel)]="model.phone" #password="ngModel" [ngClass]="{'is-invalid':f.submitted && password.invalid}" name="phone" required minlength="11" />
+                          <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+                            <div *ngIf="password.errors.required">Phone Number is required</div>
+                            <div *ngIf="password.errors.minlength">Phone Number must be at least 11 characters</div>
+                          </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                          <input placeholder="Email" type="text" class="form-control" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{'is-invalid':f.submitted && email.invalid}" name="email" required email />
+                          <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                            <div *ngIf="email.errors.required">Email is required</div>
+                            <div *ngIf="email.errors.email">Email must be a valid email Address</div>
+                          </div>
+                        </div>
+
+
+                        <textarea class="form-control" placeholder="Your Message" [(ngModel)]="model.message" #message="ngModel" name="message"></textarea>
+                        <input class="form-control" type="submit" value="Send" name="submit" (click)="company()">
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        
+        
+    </div>
+</section>
+
+<app-footer></app-footer>

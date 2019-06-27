@@ -1,0 +1,170 @@
+<app-admin-navbar></app-admin-navbar>
+
+
+<!-- Start Header -->
+<header class="contactHeader">
+  <div class="container">
+      <div class="wow fadeIn">
+          <h2 class="h1">Management Portfolio</h2>
+      </div>
+      
+  </div>
+</header>
+<!-- End Header -->
+<div class="alert alert-danger" *ngIf="failedDelete" role="alert" style="text-align: center;">
+    Something wrong!
+  </div>
+
+<div class="services">
+    
+    <div class="container">
+      <div class="row" *ngIf="portfolios">
+        
+        <div class="col-md-3 col-sm-6" *ngFor='let port of portfolios'>
+  
+          <div class="content" data-toggle="modal" data-target="#exampleModalCenter" style="background-color: #616161 !important">
+            <h4>{{ port.maintenancePlace }}</h4>
+            <img src="http://127.0.0.1:8000/portfolioImages/{{port.imageURL}}" alt="{{ port.maintenancePlace }}">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="popModalUp(port)">Edit</button>
+            <button class="btn btn-danger" (click)="delete(port.id)">Delete</button>
+          </div>
+          
+  
+        </div>
+      </div>
+
+      <button class="btn btn-primary" routerLink="/addPortfolio">Add New Portfolio</button>
+    </div>
+  
+    <!-- Start Loading -->
+  <div class="loading" *ngIf="!portfolios">
+    <div class="spinner"></div>
+  </div>
+  <!-- End Loading -->
+  </div>
+
+
+
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Updating</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+            <div class="alert alert-danger" *ngIf="failed" role="alert">
+              Something wrong!
+            </div>
+
+
+
+
+            <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+              <div class="row justify-content-center">
+                  <div class="inputs col-md-12">
+            
+                      <div class="form-group">
+                          <span>Place Name in English</span>
+                          <br>
+                        <input placeholder= "Place Name in English" type="text" class="form-control" [(ngModel)]="model.maintenancePlace" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="maintenancePlace" required value="{{modalValue.maintenancePlace}}" />
+                        <div class="invalid-feedback">
+                          <div>Place Name in English is required</div>
+                        </div>
+                      </div>
+            
+                      <div class="form-group">
+                          <span>Place Name in Arabic</span>
+                          <br>
+                          <input placeholder= "Place Name in Arabic" type="text" class="form-control" [(ngModel)]="model.maintenancePlaceArabic" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="maintenancePlaceArabic" required value="{{modalValue.maintenancePlaceArabic}}" />
+                          <div class="invalid-feedback">
+                            <div>Place Name in Arabic is required</div>
+                          </div>
+                        </div>
+          
+          
+                        <div class="form-group">
+                            <span>Maintenance Scope in English</span>
+                            <br>
+                          <input placeholder= "Maintenance Scope in English" type="text" class="form-control" [(ngModel)]="model.maintenanceScope" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="maintenanceScope" required value="{{modalValue.maintenanceScope}}" />
+                          <div class="invalid-feedback">
+                            <div>Maintenance Scope in English is required</div>
+                          </div>
+                        </div>
+              
+                        <div class="form-group">
+                            <span>Maintenance Scope in Arabic</span>
+                            <br>
+                            <input placeholder= "Maintenance Scope in Arabic" type="text" class="form-control" [(ngModel)]="model.maintenanceScopeArabic" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="maintenanceScopeArabic" required value="{{modalValue.maintenanceScopeArabic}}" />
+                            <div class="invalid-feedback">
+                              <div>Maintenance Scope in Arabic is required</div>
+                            </div>
+                          </div>
+          
+          
+          
+                          <div class="form-group">
+                              <span>Maintenance Duration in English</span>
+                              <br>
+                            <input placeholder= "Maintenance Duration in English" type="text" class="form-control" [(ngModel)]="model.maintenanceDuration" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="maintenanceDuration" required value="{{modalValue.maintenanceDuration}}" />
+                            <div class="invalid-feedback">
+                              <div>Maintenance Duration in English is required</div>
+                            </div>
+                          </div>
+                
+                          <div class="form-group">
+                              <span>Maintenance Duration in Arabic</span>
+                              <br>
+                              <input placeholder= "Maintenance Duration in Arabic" type="text" class="form-control" [(ngModel)]="model.maintenanceDurationArabic" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="maintenanceDurationArabic" required value="{{modalValue.maintenanceDurationArabic}}" />
+                              <div class="invalid-feedback">
+                                <div>Maintenance Duration in Arabic is required</div>
+                              </div>
+                            </div>
+          
+            
+            
+                      <div class="form-group">
+                          <span>Description in English</span>
+                          <br>
+                        <textarea placeholder="Description in English" type="text" class="form-control" [(ngModel)]="model.maintenanceDescription" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="maintenanceDescription" required value="{{modalValue.maintenanceDescription}}"></textarea>
+                        <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
+                          <div *ngIf="firstName.errors.required">Description in English is required</div>
+                        </div>
+                      </div>
+            
+                      <div class="form-group">
+                          <span>Description in Arabic</span>
+                          <br>
+                          <textarea placeholder="Description in Arabic" type="text" class="form-control" [(ngModel)]="model.maintenanceDescriptionArabic" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="maintenanceDescriptionArabic" required value="{{modalValue.maintenanceDescriptionArabic}}"></textarea>
+                          <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
+                            <div *ngIf="firstName.errors.required">Description in Arabic is required</div>
+                          </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <span>Place image</span>
+                            <br>
+                            <input class="fileChooser" type="file" id="avatar" name="imageURL" accept="image/png, image/jpeg" (change)="uploadImage($event)">
+                          </div>
+            
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" name="submit" class="btn btn-primary" (click)="onSubmit()">Save changes</button>
+                          </div>
+                  </div>
+              </div>
+            </form>
+
+
+        </div>
+        
+      </div>
+    </div>
+  </div>

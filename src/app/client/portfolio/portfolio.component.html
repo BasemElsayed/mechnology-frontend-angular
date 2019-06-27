@@ -1,0 +1,118 @@
+<app-navbar></app-navbar>
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <!-- Images 1 -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="src\assets\images\WhatsApp Image 2018-02-27 at 11.46.35 PM.jpeg" alt="First slide">
+        </div>
+        <!-- Images 2 -->
+        <div class="carousel-item">
+            <img class="d-block w-100" src="src\assets\images\baseSlider.jpg" alt="Second slide">
+        </div>
+        <!-- Images 3 -->
+        <div class="carousel-item">
+            <img class="d-block w-100" src="src\assets\images\sparky's.jpg" alt="Third slide">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+
+
+
+<div class="services" [ngClass]="{'direction': arabic}">
+    <h2 class="text-center" *ngIf="english">Our Portfolio</h2>
+    <h2 class="text-center" *ngIf="arabic">الاعمال السابقة</h2>
+    <div class="container" *ngIf="portfolios">
+      <div class="row">
+        <div class="col-md-4 col-sm-6" *ngFor='let port of portfolios'>
+  
+          <div class="content" data-toggle="modal" data-target="#exampleModalCenter" (click)="popModalUp(port)"  *ngIf="port.id%2 != 0" style="background-color: #ee2746 !important">
+            <h4 *ngIf="english">{{ port.maintenancePlace }}</h4>
+            <h4 *ngIf="arabic">{{ port.maintenancePlaceArabic }}</h4>
+            <img src="http://127.0.0.1:8000/portfolioImages/{{port.imageURL}}" alt="{{ port.name }}">
+          </div>
+          
+          <div class="content" data-toggle="modal" data-target="#exampleModalCenter" (click)="popModalUp(port)"  *ngIf="port.id%2 == 0" style="background-color: #0c59a9 !important">
+              <h4 *ngIf="english">{{ port.maintenancePlace }}</h4>
+              <h4 *ngIf="arabic">{{ port.maintenancePlaceArabic }}</h4>
+              <img src="http://127.0.0.1:8000/portfolioImages/{{port.imageURL}}" alt="{{ port.name }}">
+          </div>
+  
+        </div>
+      </div>
+    </div>
+    <!-- Start Loading -->
+    <div class="loading" *ngIf="!portfolios">
+      <div class="spinner"></div>
+    </div>
+    <!-- End Loading -->
+  </div>
+  
+  
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle" *ngIf="english">{{ modalValue.maintenancePlace }}</h5>
+              <h5 class="modal-title" id="exampleModalCenterTitle" *ngIf="arabic">{{ modalValue.maintenancePlaceArabic }}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <img *ngIf="modalValue.imageURL != ''" src="http://127.0.0.1:8000/portfolioImages/{{modalValue.imageURL}}" alt="{{ modalValue.maintenancePlace }}">
+  
+              <p *ngIf="english"><span>Scope</span> : {{ modalValue.maintenanceScope }}</p>
+              <p *ngIf="english"><span>Duration</span> : {{ modalValue.maintenanceDuration }}</p>
+              <p *ngIf="english">{{ modalValue.maintenanceDescription }}</p>
+
+              <p *ngIf="arabic" style="text-align: right"><span>النطاق</span> : {{ modalValue.maintenanceScopeArabic }}</p>
+              <p *ngIf="arabic" style="text-align: right"><span>المدة</span> : {{ modalValue.maintenanceDurationArabic }}</p>
+              <p *ngIf="arabic" style="text-align: right">{{ modalValue.maintenanceDescriptionArabic }}</p>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" *ngIf="english">Close</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" *ngIf="arabic">اغلاق</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <section class="staff" [ngClass]="{'direction': arabic}">
+        <h2 class="wow fadeIn" data-wow-offset="20" data-wow-duration="2s" *ngIf="english">Why Mechanology Company?</h2>
+        <h2 class="wow fadeIn" data-wow-offset="20" data-wow-duration="2s" *ngIf="arabic">لماذا شركة ميكانولوجي؟</h2>
+        <br>
+        <ul class="wow fadeIn" data-wow-offset="20" data-wow-duration="2s">
+            <li *ngIf="english"><span><i class="far fa-check-circle"></i></span><i>Our technicians are factory trained and certified.</i></li>
+            <li *ngIf="english"><span><i class="far fa-check-circle"></i></span><i>We are fully licensed and insured and back our work.</i></li>
+            <li *ngIf="english"><span><i class="far fa-check-circle"></i></span><i>Our customers get the best service possible.</i></li>
+            <li *ngIf="english"><span><i class="far fa-check-circle"></i></span><i>We have a fleet of fully stocked and equipped service vehicles.</i></li>
+            <li *ngIf="english"><span><i class="far fa-check-circle"></i></span><i>Our business is family owned and operated.</i></li>
+
+            <li *ngIf="arabic"><span><i class="far fa-check-circle"></i></span><i>لدينا فنيين مدربين ومعتمدين</i></li>
+            <li *ngIf="arabic"><span><i class="far fa-check-circle"></i></span><i>نحن مرخصون بالكامل ومؤمن علينا</i></li>
+            <li *ngIf="arabic"><span><i class="far fa-check-circle"></i></span><i>يحصل عملاؤنا على أفضل خدمة ممكنة</i></li>
+            <li *ngIf="arabic"><span><i class="far fa-check-circle"></i></span><i>لدينا أسطول من سيارات الخدمة المجهزة والمعدة بالكامل.</i></li>
+            <li *ngIf="arabic"><span><i class="far fa-check-circle"></i></span><i>أعمالنا تدار و تمتلك بمفهوم العائلة</i></li>
+        </ul>
+    </section>
+    
+
+
+<app-footer></app-footer>

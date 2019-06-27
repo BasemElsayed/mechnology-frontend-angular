@@ -1,0 +1,101 @@
+<app-admin-navbar></app-admin-navbar>
+
+
+<!-- Start Header -->
+<header class="contactHeader">
+  <div class="container">
+      <div class="wow fadeIn">
+          <h2 class="h1">Add Portfolio</h2>
+      </div>
+      
+  </div>
+</header>
+<!-- End Header -->
+
+<div class="alert alert-success" *ngIf="success" role="alert" style="text-align: center;">
+  Service is Successfully added
+</div>
+
+<div class="alert alert-danger" *ngIf="failed" role="alert" style="text-align: center;">
+  Something wrong!
+</div>
+
+
+<form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+    <div class="row justify-content-center">
+        <div class="inputs col-md-4">
+  
+            <div class="form-group">
+              <input placeholder= "Place Name in English" type="text" class="form-control" [(ngModel)]="model.nameEnglish" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="nameEnglish" required />
+              <div class="invalid-feedback">
+                <div>Place Name in English is required</div>
+              </div>
+            </div>
+  
+            <div class="form-group">
+                <input placeholder= "Place Name in Arabic" type="text" class="form-control" [(ngModel)]="model.nameArabic" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="nameArabic" required />
+                <div class="invalid-feedback">
+                  <div>Place Name in Arabic is required</div>
+                </div>
+              </div>
+
+
+              <div class="form-group">
+                <input placeholder= "Maintenance Scope in English" type="text" class="form-control" [(ngModel)]="model.scopeEnglish" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="scopeEnglish" required />
+                <div class="invalid-feedback">
+                  <div>Maintenance Scope in English is required</div>
+                </div>
+              </div>
+    
+              <div class="form-group">
+                  <input placeholder= "Maintenance Scope in Arabic" type="text" class="form-control" [(ngModel)]="model.scopeArabic" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="scopeArabic" required />
+                  <div class="invalid-feedback">
+                    <div>Maintenance Scope in Arabic is required</div>
+                  </div>
+                </div>
+
+
+
+                <div class="form-group">
+                  <input placeholder= "Maintenance Duration in English" type="text" class="form-control" [(ngModel)]="model.durationEnglish" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="durationEnglish" required />
+                  <div class="invalid-feedback">
+                    <div>Maintenance Duration in English is required</div>
+                  </div>
+                </div>
+      
+                <div class="form-group">
+                    <input placeholder= "Maintenance Duration in Arabic" type="text" class="form-control" [(ngModel)]="model.durationArabic" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="durationArabic" required />
+                    <div class="invalid-feedback">
+                      <div>Maintenance Duration in Arabic is required</div>
+                    </div>
+                  </div>
+
+  
+  
+            <div class="form-group">
+              <textarea placeholder="Description in English" type="text" class="form-control" [(ngModel)]="model.descriptionEnglish" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="descriptionEnglish" required></textarea>
+              <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
+                <div *ngIf="firstName.errors.required">Description in English is required</div>
+              </div>
+            </div>
+  
+            <div class="form-group">
+                <textarea placeholder="Description in Arabic" type="text" class="form-control" [(ngModel)]="model.descriptionArabic" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="descriptionArabic" required></textarea>
+                <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
+                  <div *ngIf="firstName.errors.required">Description in Arabic is required</div>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                  <span>Profile Picture</span>
+                  <br>
+                  <input class="fileChooser" type="file" id="avatar" name="imageURL" accept="image/png, image/jpeg" (change)="uploadImage($event)">
+                </div>
+  
+            <input class="btn btn-primary btn-block" type="submit" value="Insert" name="submit">
+        </div>
+    </div>
+  </form>
+
+
+

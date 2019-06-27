@@ -1,0 +1,47 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" [ngClass]="{'direction': arabic}">
+  <div class="container">
+    <a class="navbar-brand" href="#"><img src="src\assets\images\mech.png" alt="logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto" [ngClass]="{'ml-auto': english, 'mr-auto': arabic}">
+        <li class="nav-item" routerLink="/home" routerLinkActive="active">
+          <a class="nav-link" *ngIf="english">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" *ngIf="arabic">الرئيسيه <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" routerLink="/about" routerLinkActive="active">
+          <a class="nav-link" *ngIf="english">About</a>
+          <a class="nav-link" *ngIf="arabic">من نحن</a>
+        </li>
+        <li class="nav-item" routerLink="/portfolio" routerLinkActive="active">
+          <a class="nav-link" *ngIf="english">Portfolio</a>
+          <a class="nav-link" *ngIf="arabic">الاعمال السابقه</a>
+        </li>
+        <li class="nav-item" routerLink="/offers" routerLinkActive="active">
+          <a class="nav-link" *ngIf="english">Offers</a>
+          <a class="nav-link" *ngIf="arabic">العروض</a>
+        </li>
+        <li class="nav-item" (click)="reloadContact()" routerLink="/contact" routerLinkActive="active">
+          <a class="nav-link" *ngIf="english">Contact Us</a>
+          <a class="nav-link" *ngIf="arabic">اتصل بنا</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" *ngIf="english">
+            Languages
+          </a>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" *ngIf="arabic">
+            اللغات
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" style="cursor: pointer;" (click)="languages('english')" *ngIf="english">English</a>
+            <a class="dropdown-item" style="cursor: pointer;" (click)="languages('english')" *ngIf="arabic">الانجليزيه</a>
+            <a class="dropdown-item" style="cursor: pointer;" (click)="languages('arabic')" *ngIf="english">Arabic</a>
+            <a class="dropdown-item" style="cursor: pointer;" (click)="languages('arabic')" *ngIf="arabic">العربيه</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

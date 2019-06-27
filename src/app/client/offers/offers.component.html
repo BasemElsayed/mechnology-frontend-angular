@@ -1,0 +1,140 @@
+<app-navbar></app-navbar>
+
+<!-- Start Header -->
+<header class="contactHeader">
+  <div class="container">
+      <div class="wow fadeIn">
+          <h2 class="h1 lang">Special Offers</h2>
+      </div>
+  </div>
+</header>
+<!-- End Header -->
+
+<div class="jumbotron  text-center">
+<h1 class="display-4 wow fadeIn neon" data-wow-duration="2s">Our Hot Offers!</h1>
+<p class="lead"></p>
+<hr class="my-4">
+       <p class="typee">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+</div>
+
+<!-- START OFFERS FOR COMPANIES -->
+<div class="company" id="company">
+   <div class="container">
+       <div class="row justify-content-center text-center ">
+           <div class="col-12">
+               <h2 class="cust-h2 wow fadeInUp" data-wow-duration="2s" data-wow-delay="2.2s">Offers for Companies</h2>
+           </div>
+       </div>
+       <div class="row justify-content-center align-items-center text-center" style="margin: 35px 0px;" *ngIf="offers">
+        <div class="col-12 col-md-4" *ngFor='let offer of offers; let i = index'>
+            <div class="card midd wow slideInUp" data-wow-duration="2s" data-wow-offset="50"  *ngIf="i%2==0">
+                <div class="card-header">
+                    {{ offer.duration }}
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ offer.price }} $</h5>
+                    <p class="card-text">{{ offer.feature1 }}</p>
+                    <p class="card-text">{{ offer.feature2 }}</p>
+                    <p class="card-text">{{ offer.feature3 }}</p>
+
+                    <a routerLink="/contact" class="btn color2 btn-block">Contact Us</a>
+                </div>
+            </div>
+
+            <div class="card lgg wow slideInUp" data-wow-duration="3s" data-wow-offset="50"  *ngIf="i%2!=0">
+                    <div class="card-header headd">
+                        {{ offer.duration }}
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ offer.price }} $</h5>
+                        <p class="card-text">{{ offer.feature1 }}</p>
+                        <p class="card-text">{{ offer.feature2 }}</p>
+                        <p class="card-text">{{ offer.feature3 }}</p>
+                        <p class="card-text">{{ offer.feature1 }}</p>
+                        <p class="card-text">{{ offer.feature2 }}</p>
+                        <p class="card-text">{{ offer.feature3 }}</p>
+    
+                        <a href="contact.php" class="btn color2 btn-block">Contact Us</a>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+   </div>
+   <!-- Start Loading -->
+   <div class="loading" *ngIf="!offers">
+    <div class="spinner"></div>
+  </div>
+  <!-- End Loading -->
+</div>
+
+<!-- END OFFERS COMPANIES -->
+
+<!-- START OFFERS FOR CUSTOMERS -->
+
+<div class="customer" id="customer">
+<div class="container">
+   <div class="row justify-content-center text-center ">
+       <div class="col-12">
+           <h2 class="cust-h2 wow fadeInUp" data-wow-duration="2s" data-wow-delay="2.2s">Offers for Customers</h2>
+       </div>
+   </div>
+   <div class="row justify-content-center align-items-center text-center">
+       <div class="col-12 col-md-3">
+           <div class="card midd wow slideInUp" data-wow-duration="2s" data-wow-offset="50">
+               <div class="card-header">
+                   Month
+               </div>
+               <div class="card-body">
+                   <h5 class="card-title">5 $</h5>
+                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                   <a href="contact.php" class="btn color2 btn-block">Contact Us</a>
+               </div>
+           </div>
+       </div>
+       <div class="col-12 col-md-4">
+           <div class="card lgg wow slideInUp" data-wow-duration="3s" data-wow-offset="50">
+               <div class="card-header headd">
+                   Year
+               </div>
+               <div class="card-body">
+                   <h5 class="card-title">200 $</h5>
+                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                   <a href="contact.php" class="btn color2 btn-block">Contact Us</a>
+               </div>
+           </div>
+       </div>
+       <div class="col-12 col-md-3">
+           <div class="card midd wow slideInUp" data-wow-duration="2s" data-wow-offset="50">
+               <div class="card-header">
+                   6 Month
+               </div>
+               <div class="card-body">
+                   <h5 class="card-title">100 $</h5>
+                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                   <a href="contact.php" class="btn color2 btn-block">Contact Us</a>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
+</div>
+
+<!-- END OFFERS FOR CUSTOMERS -->
+
+
+
+
+<app-footer></app-footer>

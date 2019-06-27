@@ -1,0 +1,269 @@
+.direction
+{
+    direction: rtl;
+    text-align: right;
+}
+
+
+
+.contactHeader
+{
+    padding: 60px 0 50px;
+    background-color: #092d53;
+}
+
+.contactHeader h2
+{
+    margin-top: 65px;
+    color: #FFF;
+    font-weight: bold;
+}
+
+
+
+.contacts
+{
+    overflow: hidden
+}
+
+.contacts .location
+{
+    margin-top: 100px;
+}
+
+.contacts h4
+{
+    color: #4f4f4f;
+}
+.contacts p
+{
+    color: #686868;
+    font-size: 14px;
+}
+.contacts .contact-information
+{
+    margin-top: 40px;
+}
+.contacts  p
+{
+    line-height: 1.8;
+}
+.contacts  p span
+{
+    margin-left: 40px;
+}
+
+.contacts .office-hours
+{
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+
+.contacts .google-map
+{
+    box-shadow: 4px 6px 20px 1px #dbdbdb;
+    padding: 0;
+}
+
+agm-map
+{
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 767px)
+{
+
+   .contactHeader
+    {
+        padding: 30px 0;
+    }
+    .contactHeader h2
+    {
+        font-size: 1.5em;
+        margin-left: 100px;
+    }
+    .contacts .content
+    {
+        margin-left: 14%;
+    }
+}
+
+
+@media (max-width: 992px)
+{
+    .contacts .content
+    {
+        margin-left: 30%;
+    }
+    .google-map
+    {
+        height: 400px;
+    }
+}
+@media (max-width: 992px)
+{
+    .google-map
+    {
+        height: 300px;
+    }
+}
+/* Start Forms */
+
+
+.forms
+{
+    padding: 60px 0;
+    background: url(src/assets/images/35756.jpg) !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    background-position: bottom bottom !important;
+    background-color: rgba(0,0,0,0.6) !important;
+    background-blend-mode: overlay !important;
+    color: #FFF;
+    min-height: 370px;
+    overflow: hidden;
+}
+
+.forms ul
+{
+    text-align: center;
+}
+.forms ul li
+{
+    display: inline-block;
+    font-size: 30px;
+    background-color: #FFF;
+    padding: 17px 35px;
+    margin: 20px;
+    border-radius: 10px;
+    color: #0c59a9;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+.forms ul li:hover
+{
+    background-color: #0c59a9;
+    color: #FFF;
+}
+
+.forms ul li span
+{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.forms .buttons
+{
+    margin-top: 35px;
+}
+
+.customerForm,
+.companyForm
+{
+    margin-top: 50px;
+    margin-bottom: 80px;
+    display: none;
+    transition: all 0.5s ease-in-out;
+}
+.customerForm span,
+.companyForm span
+{
+    position: absolute;
+    right: 22px;
+    top: 15px;
+    border: 1px solid #716c67;
+    box-shadow: inset -1px 1px 8px 0px #bcbcbc;
+    padding: 0px 6px;
+    border-radius: 5px;
+    color: #0c59a9;
+    cursor: pointer;
+}
+
+.forms .customerForm .inputs,
+.forms .companyForm .inputs
+{
+    box-shadow: inset -1px 1px 8px 0px #bcbcbc;
+    padding: 30px 35px 60px;
+    border-radius: 12px;
+}
+.forms .customerForm .form-control,
+.forms .companyForm .form-control
+{
+	margin-top: 20px;
+    margin-top: 20px;
+    background-color: transparent;
+    box-shadow: inset -1px 1px 8px 0px #bcbcbc;
+    border: 2px solid transparent;
+    color: #FFF;
+}
+.forms .customerForm input[type=submit],
+.forms .companyForm input[type=submit]
+{
+    background-color: #0c59a9;
+    box-shadow: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+.forms .customerForm ::placeholder,
+.forms .companyForm ::placeholder
+{
+    color: #FFF;
+}
+
+.forms .customerForm .row > .form-control,
+.forms .companyForm .row > .form-control
+{
+	padding: 10px 0;
+	transition: all 0.5s ease-in-out;
+	background-color: #01a4ef;
+	font-weight: bold;
+	color: #FFF;
+	cursor: pointer;
+}
+.forms .customerForm textarea,
+.forms .companyForm textarea
+{
+	height: 149px;
+	overflow: auto;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill 
+{
+    background-color: transparent !important;
+}
+
+
+@media (max-width: 575px)
+{
+    .form
+    {
+        padding-bottom: 30px;
+    }
+    .forms h2
+    {
+        font-size: 25px;
+    }
+    .forms ul
+    {
+        margin-top: 35px;
+    }
+    .forms ul li
+    {
+        padding: 10px 25px;
+        font-size: 15px;
+        margin-top: 18px;
+    }
+    .forms .customerForm .inputs,
+    .forms .companyForm .inputs
+    {
+        margin: 10px;
+    }
+    .forms .customerForm ::placeholder,
+    .forms .companyForm ::placeholder
+    {
+        font-size: 15px;    
+    }
+}

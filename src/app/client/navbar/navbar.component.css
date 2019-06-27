@@ -1,0 +1,65 @@
+.direction
+{
+    direction: rtl;
+}
+
+.navbar
+{
+    background-color: #ebebeb !important;
+    opacity: 0.85;
+    padding: 0;
+}
+
+.navbar-brand
+{
+    width: 15%;
+}
+.navbar-brand img
+{
+    width: 90%;
+}
+.navbar-light .navbar-nav .active>.nav-link, 
+.navbar-light .navbar-nav .nav-link.active, 
+.navbar-light .navbar-nav .nav-link.show, 
+.navbar-light .navbar-nav .show>.nav-link,
+.navbar-light .navbar-nav .nav-link
+{    
+    padding: 23px 22px;
+    font-size: 18px;
+    color: #0c59a9;
+    transition: all 0.4s ease-in-out;
+}
+
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link:hover
+{
+    color: white;
+    background-color: #0c59a9;
+    cursor: pointer;
+}
+
+
+.show .nav-link:hover
+{
+    color: white !important;
+}
+
+@media (max-width: 992px)
+{
+    .navbar
+    {
+        padding: 10px;
+    }
+    .navbar-brand
+    {
+        width: 20%;
+    }
+}
+
+@media (max-width: 575.98px)
+{
+    .navbar-brand
+    {
+        width: 30%;
+    }
+}

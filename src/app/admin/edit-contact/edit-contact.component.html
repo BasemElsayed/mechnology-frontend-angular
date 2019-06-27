@@ -1,0 +1,121 @@
+<app-admin-navbar></app-admin-navbar>
+
+
+<!-- Start Header -->
+<header class="contactHeader">
+  <div class="container">
+      <div class="wow fadeIn">
+          <h2 class="h1">Management Contacts</h2>
+      </div>
+      
+  </div>
+</header>
+<!-- End Header -->
+
+<div class="alert alert-success" *ngIf="success" role="alert">
+  Contacts is Successfully Updated
+</div>
+
+<div class="alert alert-danger" *ngIf="failed" role="alert">
+  Something wrong!
+</div>
+
+
+<form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+  <div class="row justify-content-center">
+      <div class="inputs col-md-4">
+        
+          <div class="form-group">
+              <span>Latitude (Google Maps)</span><br>
+              <input type="text" class="form-control" [(ngModel)]="model.latitude" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="latitude" required />
+              <div class="invalid-feedback">
+                <div>Mobile is required</div>
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <span>Langitude (Google Maps)</span><br>
+              <input type="text" class="form-control" [(ngModel)]="model.langitude" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="langitude" required />
+              <div class="invalid-feedback">
+                <div>Mobile is required</div>
+              </div>
+            </div>
+
+          <div class="form-group">
+            <span>Address in English</span><br>
+            <input type="text" class="form-control" [(ngModel)]="model.addressEnglish" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="addressEnglish" required />
+            <div class="invalid-feedback">
+              <div>Address in English is required</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <span>Address in Arabic</span><br>
+            <input type="text" class="form-control" [(ngModel)]="model.addressArabic" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="addressArabic" required />
+            <div class="invalid-feedback">
+              <div>Address in Arabic is required</div>
+            </div>
+          </div>
+
+
+
+          <div class="form-group">
+            <span>Email</span><br>
+            <input type="email" class="form-control" [(ngModel)]="model.email" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="email" required />
+            <div class="invalid-feedback">
+              <div>Email is required</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <span>Phone</span><br>
+            <input type="text" class="form-control" [(ngModel)]="model.phone" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="phone" required />
+            <div class="invalid-feedback">
+              <div>Phone is required</div>
+            </div>
+          </div>
+            
+          <div class="form-group">
+            <span>Mobile</span><br>
+            <input type="text" class="form-control" [(ngModel)]="model.mobile" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="mobile" required />
+            <div class="invalid-feedback">
+              <div>Mobile is required</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <span>Start Working From (Enter Number Only)</span><br>
+            <input type="text" class="form-control" [(ngModel)]="model.from" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="from" required />
+            <div class="invalid-feedback">
+              <div>Start Working From is required</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <span>End Working To (Enter Number Only)</span><br>
+            <input type="text" class="form-control" [(ngModel)]="model.to" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="to" required />
+            <div class="invalid-feedback">
+              <div>End Working To is required</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <span>Holidays in English</span><br>
+            <input type="text" class="form-control" [(ngModel)]="model.holidaysEnglish" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="holidaysEnglish" required />
+            <div class="invalid-feedback">
+              <div>Holidays in English is required</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <span>Holidays in Arabic</span><br>
+            <input type="text" class="form-control" [(ngModel)]="model.holidaysArabic" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="holidaysArabic" required />
+            <div class="invalid-feedback">
+              <div>Holidays in Arabic is required</div>
+            </div>
+          </div>
+
+          <input class="btn btn-primary btn-block" type="submit" value="Insert" name="submit">
+      </div>
+  </div>
+</form>

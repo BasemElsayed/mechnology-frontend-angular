@@ -1,0 +1,158 @@
+.direction
+{
+    direction: rtl;
+    text-align: right;
+}
+
+
+footer
+{
+    padding: 60px 0 0 0;
+}
+footer h3:after
+{
+    content: "";
+    width: 37px;
+    height: 3px;
+    background-color: #ee2746;
+    display: block;
+    margin: 0 auto;
+    margin-top: 17px;
+}
+footer .socialMedia ul li
+{
+    display: inline-block;
+    background-color: #bebebe;
+    width: 80px;
+    height: 80px;
+    line-height: 77px;
+    border-radius: 50%;
+    font-size: 30px;
+    margin: 25px;
+    border: 3px solid #d7d7d7;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+
+footer .socialMedia a
+{
+    text-decoration: none;
+    color: black;
+    transition: all 0.4s ease-in-out;
+}
+
+footer .socialMedia li:hover a
+{
+    color: #fff;
+    transform: rotateY(360deg);
+}
+
+
+
+footer .socialMedia li:first-of-type:hover
+{
+    background: #3b5999;
+}
+
+footer .socialMedia li:nth-of-type(2):hover
+{
+    background: #55acee;
+}
+footer .socialMedia li:nth-of-type(3):hover
+{
+    background: #e4405f;
+}
+footer .socialMedia li:nth-of-type(4):hover
+{
+    background: #ff0000;
+}
+
+footer .site-map
+{
+    padding: 20px 0;
+    background-color: #092d53;
+    border-top: 8px solid #5b5f6a;
+    color: #FFF;
+}
+
+footer .site-map .map
+{
+    margin-top: 20px;
+}
+footer .site-map .map p
+{
+    display: inline;
+    margin-top: -5px;
+    font-size: 12px;
+}
+
+footer .site-map ul
+{
+    margin-bottom: 0;
+}
+
+footer .site-map ul li
+{
+    display: inline-block;
+    cursor: pointer;
+}
+
+
+footer .site-map ul li a
+{
+    text-decoration: none;
+    color: #FFF;
+    transition: all 0.2s ease-in-out;
+}
+
+footer .site-map ul li a:hover
+{
+    color: #ed2948;
+}
+footer .site-map ul li span
+{
+    margin: 10px;
+}
+footer .brand
+{
+    width: 50%;
+}
+footer .ace h5
+{
+    width: 80%;
+    text-align: center;
+}
+
+
+footer .ace h5 a
+{
+    text-decoration: none;
+}
+
+
+@media (max-width: 575px) 
+{
+   footer .site-map h5
+    {
+        text-align: center;
+        margin-top: 30px;
+    }
+}
+@media (max-width: 768px) 
+{
+    footer .brand
+    {
+        width: 50%;
+        margin-left: 25%;
+    }
+    footer .ace h5
+    {
+        width: 100%;
+        margin-top: 15px;
+    }
+    footer .ace h5 a
+    {
+        display: block;
+        margin-top: 8px;
+    }
+}

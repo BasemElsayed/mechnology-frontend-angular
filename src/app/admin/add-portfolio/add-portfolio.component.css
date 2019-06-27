@@ -1,0 +1,32 @@
+.contactHeader
+{
+    padding: 0px 0 20px;
+    padding-top: 25px;
+    background-color: #a5a5a5;
+}
+
+.contactHeader h2
+{
+    color: #FFF;
+    font-weight: bold;
+}
+
+form
+{
+    margin-top: 35px;
+}
+
+textarea
+{
+    height: 150px;
+}
+
+.row
+{
+    margin: 0px;
+}
+
+.btn
+{
+    margin-bottom: 30px;
+}

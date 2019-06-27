@@ -1,0 +1,57 @@
+<div class="services" [ngClass]="{'direction': arabic}">
+  <h2 class="text-center" *ngIf="english">Services</h2>
+  <h2 class="text-center" *ngIf="arabic">خدماتنا</h2>
+  <div class="container">
+    <div class="row" *ngIf="services">
+      <div class="col-md-3 col-sm-6" *ngFor='let serv of services'>
+
+        <div class="content" data-toggle="modal" data-target="#exampleModalCenter" (click)="popModalUp(serv)"  *ngIf="serv.id%2 != 0" style="background-color: #ee2746 !important">
+          <h4 *ngIf="english">{{ serv.name }}</h4>
+          <h4 *ngIf="arabic">{{ serv.nameArabic }}</h4>
+          <img src="http://127.0.0.1:8000/images/{{serv.imageURL}}" alt="{{ serv.name }}">
+        </div>
+        
+        <div class="content" data-toggle="modal" data-target="#exampleModalCenter" (click)="popModalUp(serv)"  *ngIf="serv.id%2 == 0" style="background-color: #0c59a9 !important">
+            <h4 *ngIf="english">{{ serv.name }}</h4>
+            <h4 *ngIf="arabic">{{ serv.nameArabic }}</h4>
+            <img src="http://127.0.0.1:8000/images/{{serv.imageURL}}" alt="{{ serv.name }}">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Start Loading -->
+<div class="loading" *ngIf="!services">
+  <div class="spinner"></div>
+</div>
+<!-- End Loading -->
+</div>
+
+
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle" *ngIf="english">{{ modalValue.name }}</h5>
+        <h5 class="modal-title" id="exampleModalCenterTitle" *ngIf="arabic">{{ modalValue.nameArabic }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img *ngIf="modalValue.imageURL != ''" src="http://127.0.0.1:8000/images/{{modalValue.imageURL}}" alt="{{ modalValue.name }}">
+
+        <p *ngIf="english">{{ modalValue.description }}</p>
+        <p *ngIf="arabic" style="text-align: right">{{ modalValue.descriptionArabic }}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" *ngIf="english">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" *ngIf="arabic">اغلاق</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    

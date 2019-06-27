@@ -1,0 +1,128 @@
+<app-admin-navbar></app-admin-navbar>
+
+
+<!-- Start Header -->
+<header class="contactHeader">
+  <div class="container">
+      <div class="wow fadeIn">
+          <h2 class="h1">Management Services</h2>
+      </div>
+      
+  </div>
+</header>
+<!-- End Header -->
+<div class="alert alert-danger" *ngIf="failedDelete" role="alert" style="text-align: center;">
+    Something wrong!
+  </div>
+
+<div class="services">
+    
+    <div class="container">
+      <div class="row" *ngIf="services">
+        
+        <div class="col-md-3 col-sm-6" *ngFor='let serv of services'>
+  
+          <div class="content" data-toggle="modal" data-target="#exampleModalCenter" style="background-color: #616161 !important">
+            <h4>{{ serv.name }}</h4>
+            <img src="http://127.0.0.1:8000/images/{{serv.imageURL}}" alt="{{ serv.name }}">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="popModalUp(serv)">Edit</button>
+            <button class="btn btn-danger" (click)="delete(serv.id)">Delete</button>
+          </div>
+          
+  
+        </div>
+      </div>
+
+      <button class="btn btn-primary" routerLink="/addService">Add New Service</button>
+    </div>
+  
+    <!-- Start Loading -->
+  <div class="loading" *ngIf="!services">
+    <div class="spinner"></div>
+  </div>
+  <!-- End Loading -->
+  </div>
+
+
+
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Updating</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+            <div class="alert alert-danger" *ngIf="failed" role="alert">
+              Something wrong!
+            </div>
+
+            <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                <div class="row justify-content-center">
+                    <div class="inputs col-md-12">
+              
+                        <div class="form-group">
+                            <span>Service Name in English</span>
+                            <br>
+                          <input placeholder= "Service Name in English" type="text" class="form-control" [(ngModel)]="model.name" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="serviceName" required value="{{modalValue.name}}"/>
+                          <div class="invalid-feedback">
+                            <div>Service Name in English is required</div>
+                          </div>
+                        </div>
+              
+                        <div class="form-group">
+                            <span>Service Name in Arabic</span>
+                            <br>
+                            <input placeholder= "Service Name in Arabic" type="text" class="form-control" [(ngModel)]="model.nameArabic" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="serviceNameArabic" required value="{{modalValue.nameArabic}}"/>
+                            <div class="invalid-feedback">
+                              <div>Service Name in Arabic is required</div>
+                            </div>
+                          </div>
+              
+              
+                        <div class="form-group">
+                            <span>Description in English</span>
+                            <br>
+                          <textarea placeholder="Description in English" type="text" class="form-control" [(ngModel)]="model.description" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="description" required value="{{modalValue.description}}"></textarea>
+                          <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
+                            <div *ngIf="firstName.errors.required">Description in English is required</div>
+                          </div>
+                        </div>
+              
+                        <div class="form-group">
+                            <span>Description in Arabic</span>
+                            <br>
+                            <textarea placeholder="Description in Arabic" type="text" class="form-control" [(ngModel)]="model.descriptionArabic" #firstName="ngModel" [ngClass]="{'is-invalid':f.submitted && firstName.invalid}" name="descriptionArabic" required value="{{modalValue.descriptionArabic}}"></textarea>
+                            <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
+                              <div *ngIf="firstName.errors.required">Description in Arabic is required</div>
+                            </div>
+                          </div>
+                          
+                          <div class="form-group">
+                              <span>Profile Picture</span>
+                              <br>
+                              <input class="fileChooser" type="file" id="avatar" name="imageURL" accept="image/png, image/jpeg" (change)="uploadImage($event)">
+                            </div>
+                            <br>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="submit" name="submit" class="btn btn-primary" (click)="onSubmit()">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+              </form>
+
+
+
+        </div>
+        
+      </div>
+    </div>
+  </div>

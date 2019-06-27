@@ -1,0 +1,249 @@
+.contactHeader
+{
+    padding: 60px 0 50px;
+    background-color: #092d53;
+}
+
+.contactHeader h2
+{
+    margin-top: 65px;
+    color: #FFF;
+    font-weight: bold;
+}
+
+
+
+.offers
+{
+    background: #092d53;
+    padding: 50px 0;
+    color: #fff;
+    font-size: 40px;
+    font-weight: 800;
+    padding-left: 100px;
+    font-family: 'Oswald', sans-serif;
+    padding-top: 110px;
+}
+.neon
+{
+    font-size: 40px;
+    font-weight: 600;
+    font-size: 60px;
+    color: rgba(225,225,225,.1);
+    background: #d66018;
+    background-repeat: repeat-x;
+    -webkit-background-clip:text;
+    animation: animate 15s linear infinite;
+}
+.anth
+{
+    
+}
+@keyframes animate{
+    0%{
+        background-position: left 0px top 10px;
+    }
+    40%{
+        background-position: left 800px top 10px;
+    }
+}
+.lgg
+{
+   min-height: 500px;
+}
+.company
+{
+    overflow: hidden;
+    padding: 60px 0;
+}
+.midd
+{
+    min-height: 350px;
+}
+.customer
+{
+    background: #E9ECEF;
+    overflow: hidden;
+    padding: 60px 0;
+}
+.cust-h2
+{
+    font-size: 40px;
+    padding: 12px 0 10px 0;
+}
+.color2
+{
+    background: none;
+    border: 1px solid #ef2746;
+}
+.color2:hover , .color2:focus
+{
+    background: #ef2746;
+    border: 1px solid #07889B;
+    -webkit-transition: color 0.3s ease-in, background 0.3s ease-in;
+    transition: color 0.3s ease-in, background 0.3s ease-in;
+    color: #fff;
+}
+
+
+
+.footer
+{
+    margin: 50px 0;
+}
+.lnav
+{
+    background: #333;
+    padding-top: 30px;
+}
+.lnav h5
+{
+    color: #fff;
+}
+
+/* End My Style */
+
+
+/* Start OverWrite Bootstrap */
+
+/*
+.navbar
+{
+    background: #07889B;
+}
+*/
+.card
+{
+    border-radius: 0.76rem;
+}
+.card-body
+{
+    padding: 20px;
+}
+.card-title
+{
+    border-bottom: 1px solid #F0F0F0;
+    padding-bottom: 5px;
+    font-size: 35px;
+}
+.card-text
+{
+    border-bottom: 1px solid #F0F0F0;
+    padding-bottom: 5px;
+}
+.color
+{
+    background: #07889B;
+    color: #fff;
+}
+.color:hover
+{
+    color: #E37222;
+}
+.card-header
+{
+    font-size: 30px;
+    background: #07889B;
+    color: #fff;
+    
+}
+.headd
+{
+    background: #ef2746;
+}
+.jumbotron
+{
+    padding-bottom: 160px;
+    margin-bottom: 10px !important; 
+    padding-top: 100px !important;
+}
+
+.popp
+{
+    height: 200px;
+}
+
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+
+
+/* Start Loading */
+.loading
+{
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+}
+.spinner {
+  width: 40px;
+  height: 40px;
+  background-color: #0f549d;
+  margin: 220px auto;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes sk-rotateplane {
+  0% { 
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+  } 50% { 
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+  } 100% { 
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+
+/* End Loading */

@@ -1,0 +1,34 @@
+<body class="text-center">
+    <form class="form-signin" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+      <img class="mb-4" src="src\assets\images\mech.png" alt="" width="200" height="72">
+
+      <div class="form-group">
+          <input type="email" placeholder="Email" class="form-control" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{'is-invalid':f.submitted && email.invalid}" name="email" required email />
+          <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+            <div *ngIf="email.errors.required">Email Name is required</div>
+            <div *ngIf="email.errors.email">Email must be a valid email Address</div>
+          </div> 
+          <ul style="list-style-type: none; color: red; text-align: left; padding-left: 0px;">
+              <li *ngFor='let error of errorEmail'> *{{ error }} </li>
+            </ul>
+        </div>
+
+        <div class="form-group">
+          <input type="password" placeholder="Password" class="form-control" [(ngModel)]="model.password" #password="ngModel" [ngClass]="{'is-invalid':f.submitted && password.invalid}" name="password" required minlength="6" />
+          <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+            <div *ngIf="password.errors.required">Password is required</div>
+            <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+          </div>
+          <ul style="list-style-type: none; color: red; text-align: left; padding-left: 0px;">
+              <li *ngFor='let error of errorPassword'> *{{ error }} </li>
+            </ul>
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-primary btn-block">Login</button>
+        </div>
+    <p class="mt-5 mb-3 text-muted">&copy; 2017 - 2018</p>
+  </form>
+
+
+</body>

@@ -1,0 +1,78 @@
+<div class="team" [ngClass]="{'direction': arabic}">
+  <h2 class="text-center" *ngIf="english">Our Team</h2>
+  <h2 class="text-center" *ngIf="arabic">شركائنا</h2>
+  <div class="container" *ngIf="teams">
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+
+
+          <div class="carousel-inner">
+
+            <div class="carousel-item active" *ngFor='let team of basic; let i = index'>
+                <div class="row">
+                    <div class="col-md-4">
+                      <img *ngIf='team[0]!=null' src="http://127.0.0.1:8000/teamImages/{{team[0].imageURL}}" alt="{{ team[0].name }}">
+                    </div>
+              
+                    <div class="col-md-4">
+                      <img *ngIf='team[1]!=null' src="http://127.0.0.1:8000/teamImages/{{team[1].imageURL}}" alt="{{ team[1].name }}">
+                    </div>
+              
+                    <div class="col-md-4">
+                      <img *ngIf='team[2]!=null' src="http://127.0.0.1:8000/teamImages/{{team[2].imageURL}}" alt="{{ team[2].name }}">
+                    </div>
+                  </div>
+            </div>
+
+            <div class="carousel-item" *ngFor='let team of matrix; let i = index'>
+                <div class="row">
+                    <div class="col-md-4">
+                      <img *ngIf='team[0]!=null' src="http://127.0.0.1:8000/teamImages/{{team[0].imageURL}}" alt="{{ team[0].name }}">
+                    </div>
+              
+                    <div class="col-md-4">
+                      <img *ngIf='team[1]!=null' src="http://127.0.0.1:8000/teamImages/{{team[1].imageURL}}" alt="{{ team[1].name }}">
+                    </div>
+              
+                    <div class="col-md-4">
+                      <img *ngIf='team[2]!=null'  src="http://127.0.0.1:8000/teamImages/{{team[2].imageURL}}" alt="{{ team[2].name }}">
+                    </div>
+                  </div>
+            </div>
+
+
+          </div>
+
+
+        </div>
+  </div>
+
+<!-- Start Loading -->
+<div class="loading" *ngIf="!teams">
+  <div class="spinner"></div>
+</div>
+<!-- End Loading -->
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

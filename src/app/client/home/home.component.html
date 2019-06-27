@@ -1,0 +1,45 @@
+<app-navbar></app-navbar>
+
+<!-- Start Header -->
+<header [ngClass]="{'direction': arabic}">
+  <div class="image">
+      <div class="container">
+          <div class="content">
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-6">
+                  <div class="brand">
+                      <img src="src/assets/images/mech.png" alt="logo">
+                  </div>
+                  <h3 *ngIf="english">
+                      <span>ONE CALL</span>,
+                      <b> Can Solve All Your House Problems</b>
+                    </h3>
+
+                    <h3 *ngIf="arabic">
+                        <span>مكالمه واحدة</span>,
+                        <b>تستطيع حل بها جميع مشاكل بيتك</b>
+                    </h3>
+                  <p *ngIf="english">
+                      Mechanology is a company working in maintenance industry. We provide maintenance services to Residential buildings, commercial building, and individual villas.
+                  </p>
+
+                  <p *ngIf="arabic">
+                        ميكانولوجي هي شركه متخصصه في مجال الصيانات. فنحن نقدم صيانات في مجالات المباني السكنية و التجاريه والحالات الفرديه.
+                    </p>
+              </div>
+
+            </div>
+          </div>
+      </div>
+  </div>
+</header>
+<!-- End Header -->
+
+
+<app-service></app-service>
+
+<app-team></app-team>
+
+<app-footer></app-footer>
+

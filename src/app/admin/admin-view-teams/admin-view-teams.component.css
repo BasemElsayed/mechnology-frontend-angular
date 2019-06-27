@@ -1,0 +1,143 @@
+.contactHeader
+{
+    padding: 0px 0 20px;
+    padding-top: 25px;
+    background-color: #a5a5a5;
+}
+
+.contactHeader h2
+{
+    color: #FFF;
+    font-weight: bold;
+}
+
+
+
+
+.services
+{
+    padding: 60px 0px;
+    text-align: center;
+}
+
+
+.services h2:after,
+.modal-title:after
+{
+    content: "";
+    width: 32px;
+    height: 3px;
+    background-color: #ee2746;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 60px;
+}
+
+.modal-title
+{
+    text-align: center !important;
+}
+
+.modal-title::after
+{
+    margin-bottom: 0px;
+    margin-left: 0px;
+    width: 65%;
+}
+
+
+.services .content
+{
+    background-color: #ee2746 !important;
+    border-radius: 8px;
+    width: 100%;
+    min-width: 175px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.services .content h4
+{
+    color: white;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    display: block;
+    text-align: center;
+}
+
+.services .content img
+{
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.services .content button
+{
+    margin: 10px 20px;
+    padding: 8px 20px;
+}
+
+.modal img
+{
+    width: 100%;
+    height: 320px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px 4px #888686;
+    margin-bottom: 28px;
+}
+
+
+.modal p
+{
+    line-height: 1.5;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #696969;
+}
+
+textarea
+{
+    height: 130px;
+}
+
+
+/* Start Loading */
+.loading
+{
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+}
+.spinner {
+  width: 40px;
+  height: 40px;
+  background-color: #0f549d;
+  margin: 220px auto;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes sk-rotateplane {
+  0% { 
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+  } 50% { 
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+  } 100% { 
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+
+/* End Loading */
